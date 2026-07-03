@@ -8,7 +8,7 @@ export default function ResumePage() {
     <>
       <PageHeader
         eyebrow="Resume"
-        title="A concise, verified summary of the last five years."
+        title="A concise summary of my professional journey so far"
         description="Preview the highlights inline or download the full PDF."
       />
 
