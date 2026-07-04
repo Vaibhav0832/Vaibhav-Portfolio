@@ -34,8 +34,8 @@ export default function ExperiencePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">Career Journey</h2>
-        <div className="relative mt-8">
-          <div className="absolute left-3 top-0 h-full w-px bg-border md:left-1/2" />
+        <div className="relative mt-8 md:mx-auto md:max-w-3xl">
+          <div className="absolute left-3 top-0 h-full w-px bg-border" />
           <div className="space-y-6">
             {timeline.map((t, i) => (
               <motion.div
@@ -44,10 +44,10 @@ export default function ExperiencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className={`relative grid gap-4 md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:col-start-2" : ""}`}
+                className="relative"
               >
-                <span className="absolute left-3 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-[image:var(--gradient-brand)] shadow-glow md:left-1/2" />
-                <div className={`pl-10 md:pl-0 ${i % 2 ? "md:pr-10 md:text-right" : "md:pl-10"}`}>
+                <span className="absolute left-3 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-[image:var(--gradient-brand)] shadow-glow" />
+                <div className="pl-10">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">{t.year}</p>
                   <h3 className="mt-1 font-display text-lg font-semibold">{t.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{t.detail}</p>
