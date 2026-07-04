@@ -8,6 +8,7 @@ import Skills from "@/pages/Skills";
 import Certifications from "@/pages/Certifications";
 import Achievements from "@/pages/Achievements";
 import Blog from "@/pages/Blog";
+import BlogArticle from "@/pages/BlogArticle";
 import Resume from "@/pages/Resume";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />

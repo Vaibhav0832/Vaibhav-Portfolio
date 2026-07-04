@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Download,
   Github,
   Linkedin,
   Mail,
@@ -17,7 +16,7 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden bg-hero">
         <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(600px_circle_at_20%_10%,rgba(37,99,235,0.25),transparent_60%)]" />
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr] lg:items-center">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -25,7 +24,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur"
             >
               <Sparkles className="h-3 w-3 text-[color:var(--brand-secondary)]" />
-              Available for enterprise contact center engineering
+              Genesys Cloud CX • Production • Automation
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
@@ -73,7 +72,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-brand)] px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
               >
-                <Download className="h-4 w-4" /> View Resume
+                View Resume
               </a>
               <Link
                 to="/projects"
@@ -116,7 +115,7 @@ export default function Home() {
               <img
                 src={portrait}
                 alt="Vaibhav Pattewar"
-                className="aspect-square w-full rounded-3xl object-cover"
+                className="aspect-square w-[220px] h-[220px] md:w-[300px] md:h-[300px] mx-auto rounded-full object-cover object-top"
                 loading="eager"
               />
             </div>
@@ -124,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-8">
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {heroStats.map((s, i) => (
             <motion.div
@@ -143,12 +142,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16">
+      <section className="mx-auto max-w-6xl px-4 pb-12 md:pb-16">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground">WHAT I BRING</p>
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { title: "Contact Center", body: "Genesys Cloud CX, Architect, SIP telephony, ACD & outbound campaigns at scale." },
-            { title: "Automation", body: "PowerShell tooling, monitoring, and reliability engineering across Windows Server fleets." },
-            { title: "Integration", body: "Webhooks, CRM Screen Pop, Genesys optimizing solutions implemented, and site stability & overall platform health maintenance." },
+            { title: "Own Problems End-to-End", body: "From production incident to investigation, stakeholder coordination, escalation, and resolution." },
+            { title: "Build Beyond the Ticket", body: "Turn recurring operational problems into monitoring, automation, and troubleshooting solutions." },
+            { title: "Communicate Across Levels", body: "Work confidently with engineers, managers, senior leadership, and Genesys Product Support." },
           ].map((c, i) => (
             <motion.div
               key={c.title}

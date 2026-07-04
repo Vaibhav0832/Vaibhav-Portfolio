@@ -1,7 +1,7 @@
 export const profile = {
   name: "Vaibhav Pattewar",
   title: "Genesys Cloud CX Engineer",
-  subtitle: "Enterprise Contact Center Engineering",
+  subtitle: "Enterprise Contact Center Operations & Automation",
   location: "Hyderabad, India",
   email: "pattewarvaibhav02@gmail.com",
   phone: "+91 9121923012",
@@ -9,14 +9,14 @@ export const profile = {
   github: "https://github.com/Vaibhav0832",
   website: "https://NexCX.in",
   summary:
-    "Genesys Cloud CX Engineer with hands-on experience running enterprise contact center operations, IVR development, SIP telephony, and infrastructure automation. I design resilient call flows, engineer PowerShell automation that eliminates repetitive failures, and partner with global teams to keep mission-critical customer experiences online.",
+    "Genesys Cloud CX Engineer trusted with business-critical production operations, complex incident investigations, and cross-functional technical coordination. I build automation and monitoring solutions that improve reliability, drive critical issues toward resolution with Genesys Product Support, and mentor engineers through internal Genesys learning initiatives.",
 };
 
 export const heroStats = [
-  { label: "Agents supported", value: "500+", detail: "Dual-site deployment" },
-  { label: "Screen recording uptime", value: "98%+", detail: "Up from 65%" },
-  { label: "Engineers trained", value: "25", detail: "Internal Genesys curriculum" },
-  { label: "Departments Managed", value: "Inbound + Outbound", detail: "Managed Inbound and Outbound Departments" },
+  { label: "Genesys Cloud CX", value: "Enterprise", detail: "Production operations across multiple sites" },
+  { label: "Production Engineering", value: "Automation", detail: "Monitoring, reliability & troubleshooting solutions" },
+  { label: "Incident & RCA Ownership", value: "Key POC", detail: "Complex investigations, stakeholder coordination & Genesys Product Support" },
+  { label: "Genesys Learning Initiative", value: "Mentor", detail: "Created and delivered internal training for engineers interested in Genesys Cloud CX" },
 ];
 
 export const experience = [
@@ -261,79 +261,12 @@ export const education = [
 ];
 
 export const timeline = [
-  { year: "2018", title: "SSC — Vijay High School", detail: "Foundational schooling completed with 9.2 GPA." },
-  { year: "2020", title: "Intermediate MPC — SR Junior College", detail: "Math, Physics, Chemistry (76.1%)." },
-  { year: "2020 – 2024", title: "B.Tech CSE — Malla Reddy University", detail: "Computer Science & Engineering, GPA 7.1." },
-  { year: "2022 – 2023", title: "Cloud & Data Certifications", detail: "AWS, Google Cloud, HackerRank Python & SQL, Coursera." },
-  { year: "2023", title: "Full Stack Java Developer", detail: "Java + JSP + REST + Spring (Udemy, 65 hours)." },
-  { year: "Aug 2025 – Present", title: "Genesys Cloud CX Engineer — CS Infocomm", detail: "500-agent Indian Bank deployment; IVR, SIP, PowerShell automation." },
+  { year: "2018", title: "Secondary Education", detail: "SSC · Vijay High School · GPA 9.2" },
+  { year: "2018–2020", title: "Intermediate Education", detail: "MPC · SR Junior College · 76.1%" },
+  { year: "2020–2024", title: "Computer Science & Engineering", detail: "B.Tech · Malla Reddy University · GPA 7.1" },
+  { year: "2025–Present", title: "Executive – Infrastructure Services · CS Infocomm", detail: "Supporting the Teleperformance-managed Indian Bank project in a large-scale, multi-site, business-critical Genesys Cloud CX production environment." },
 ];
 
-export const blogPosts = [
-  {
-    slug: "genesys-cloud-cx-ivr-design",
-    title: "Designing IVR Flows That Scale in Genesys Cloud CX",
-    excerpt:
-      "Structural patterns for building banking-grade IVR flows in Genesys Architect that survive high volume and constant change.",
-    tag: "Genesys Cloud CX",
-    readTime: "8 min",
-    date: "May 2026",
-  },
-  {
-    slug: "powershell-automation-contact-center",
-    title: "PowerShell Automation for 500-Agent Contact Centers",
-    excerpt:
-      "How small, well-instrumented PowerShell utilities can replace daily manual toil and lift core service reliability past 98%.",
-    tag: "PowerShell Automation",
-    readTime: "7 min",
-    date: "Apr 2026",
-  },
-  {
-    slug: "cloud-computing-for-cx-engineers",
-    title: "Cloud Computing Fundamentals Every CX Engineer Should Know",
-    excerpt:
-      "A pragmatic tour of the AWS and Google Cloud building blocks that quietly underpin modern contact center platforms.",
-    tag: "Cloud Computing",
-    readTime: "9 min",
-    date: "Mar 2026",
-  },
-  {
-    slug: "infrastructure-automation-playbook",
-    title: "An Infrastructure Automation Playbook for Windows-Heavy Stacks",
-    excerpt:
-      "Battle-tested patterns for reliability engineering on Windows Server, Active Directory, and Genesys-adjacent tooling.",
-    tag: "Infrastructure Automation",
-    readTime: "10 min",
-    date: "Feb 2026",
-  },
-  {
-    slug: "ai-for-contact-center-operations",
-    title: "Where AI Actually Helps in Contact Center Operations",
-    excerpt:
-      "Cutting through the hype: high-signal places where AI meaningfully improves IVR quality, RCA, and agent productivity.",
-    tag: "AI",
-    readTime: "6 min",
-    date: "Jan 2026",
-  },
-  {
-    slug: "sip-telephony-troubleshooting",
-    title: "SIP Telephony Troubleshooting: A Field Guide",
-    excerpt:
-      "Reading SIP traces, chasing DTMF ghosts, and the mental models that make routing breakdowns fast to diagnose.",
-    tag: "Contact Center Technologies",
-    readTime: "8 min",
-    date: "Dec 2025",
-  },
-  {
-    slug: "prompt-engineering-for-engineers",
-    title: "Prompt Engineering for Engineers Who Ship",
-    excerpt:
-      "Practical prompt patterns for building reliable AI features into internal tools and knowledge platforms like NexCX.in.",
-    tag: "Prompt Engineering",
-    readTime: "7 min",
-    date: "Nov 2025",
-  },
-];
 
 export const navLinks = [
   { to: "/", label: "Home" },

@@ -24,7 +24,7 @@ export default function ContactPage() {
         description="Available for Genesys Cloud CX engagements, infrastructure automation, and thoughtful full-stack collaborations."
       />
 
-      <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-24 lg:grid-cols-[1.2fr_1fr]">
+      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 pb-24 lg:grid-cols-[1.2fr_1fr]">
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

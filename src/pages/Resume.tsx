@@ -1,94 +1,108 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Download, FileText, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 import { PageHeader } from "@/components/site-layout";
-import { experience, profile, skills } from "@/lib/portfolio-data";
+import { profile } from "@/lib/portfolio-data";
+
+const RESUME_PDF = "/Vaibhav_Pattewar_CV.pdf";
+
+const whatsInside = [
+  { title: "Experience", body: "Enterprise contact center operations and production engineering.", to: "/experience" },
+  { title: "Technical Skills", body: "Genesys Cloud CX, automation, telephony, infrastructure, and development tools.", to: "/skills" },
+  { title: "Projects & Engineering Work", body: "Practical automation, monitoring, troubleshooting, and NexCX development.", to: "/projects" },
+  { title: "Certifications & Education", body: "Professional certifications and academic background.", to: "/certifications" },
+];
 
 export default function ResumePage() {
   return (
     <>
       <PageHeader
         eyebrow="Resume"
-        title="A concise summary of my professional journey so far"
-        description="Preview the highlights inline or download the full PDF."
+        title="Everything important, in one document."
+        description="View my resume for a concise overview of my experience, technical capabilities, projects, and professional background."
       />
 
-      <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-24 lg:grid-cols-[1.4fr_1fr]">
+      <section className="mx-auto max-w-3xl px-4 py-12 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass rounded-3xl p-8"
+          className="glass rounded-3xl p-6 text-center md:p-8"
         >
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <h2 className="font-display text-3xl font-bold">{profile.name}</h2>
-              <p className="mt-1 text-sm text-muted-foreground">{profile.title} · {profile.location}</p>
-            </div>
-            <a href="/Vaibhav_Pattewar_CV.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-brand)] px-4 py-2.5 text-sm font-semibold text-white shadow-glow hover:brightness-110">
-              <Download className="h-4 w-4" /> View / Download PDF
+          <h2 className="font-display text-2xl font-bold">{profile.name}</h2>
+          <p className="mt-1 text-sm text-muted-foreground">Executive – Infrastructure Services</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Genesys Cloud CX · Contact Center Engineering · Infrastructure Automation
+          </p>
+
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={RESUME_PDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Resume in a new tab"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[image:var(--gradient-brand)] px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:brightness-110 sm:w-auto"
+            >
+              View Resume <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <a
+              href={RESUME_PDF}
+              download
+              aria-label="Download Resume PDF"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-surface/60 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur transition hover:border-[color:var(--brand)] sm:w-auto"
+            >
+              Download PDF <Download className="h-4 w-4" />
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">{profile.summary}</p>
-
-          <div className="mt-8">
-            <h3 className="font-display text-lg font-semibold">Experience</h3>
-            {experience.map((e) => (
-              <div key={e.role} className="mt-4 rounded-2xl border border-border/60 bg-surface/40 p-5">
-                <p className="font-medium">{e.role} — {e.company}</p>
-                <p className="text-xs text-muted-foreground">{e.period} · {e.location}</p>
-                <p className="mt-1 text-xs text-muted-foreground">Project: {e.project}</p>
-                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                  {e.highlights.slice(0, 5).map((h) => (
-                    <li key={h} className="flex gap-2"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[image:var(--gradient-brand)]" /><span>{h}</span></li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <h3 className="font-display text-lg font-semibold">Core skills</h3>
-            <div className="mt-3 grid gap-3 md:grid-cols-3">
-              {skills.map((g) => (
-                <div key={g.category} className="rounded-2xl border border-border/60 bg-surface/40 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-secondary)]">{g.category}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{g.items.join(" · ")}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="mt-4 text-xs text-muted-foreground">PDF Document · Updated 2026</p>
         </motion.div>
+      </section>
 
-        <motion.aside
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-4"
-        >
-          <div className="glass rounded-2xl p-6">
-            <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-[image:var(--gradient-brand)] text-white"><FileText className="h-5 w-5" /></div>
-              <div>
-                <p className="font-display text-base font-semibold">Latest CV</p>
-                <p className="text-xs text-muted-foreground">PDF · Updated 2026</p>
-              </div>
-            </div>
-            <a href="/Vaibhav_Pattewar_CV.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[image:var(--gradient-brand)] px-4 py-2.5 text-sm font-semibold text-white shadow-glow hover:brightness-110">
-              <Download className="h-4 w-4" /> Open Resume
+      <section className="mx-auto max-w-3xl px-4 pb-12 md:pb-16">
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">What's Inside</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {whatsInside.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+            >
+              <Link to={item.to} className="glass card-hover block rounded-2xl p-5">
+                <h3 className="font-display text-base font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.body}</p>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-16 md:pb-20 text-center">
+        <div className="glass rounded-2xl p-6">
+          <h2 className="font-display text-xl font-semibold">Recruiter Shortcut</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Short on time? The resume provides the fastest overview of my professional profile.
+          </p>
+          <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={RESUME_PDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Resume in a new tab"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[image:var(--gradient-brand)] px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:brightness-110 sm:w-auto"
+            >
+              View Resume <ArrowUpRight className="h-4 w-4" />
             </a>
-            <a href="/Vaibhav_Pattewar_CV.pdf" target="_blank" rel="noreferrer" className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm font-semibold text-muted-foreground hover:text-foreground">
-              Open in new tab
-            </a>
+            <Link
+              to="/contact"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-semibold text-muted-foreground transition hover:text-foreground sm:w-auto"
+            >
+              Contact Me <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-          <div className="glass rounded-2xl p-6">
-            <p className="font-display text-base font-semibold">Prefer a quick intro?</p>
-            <p className="mt-1 text-sm text-muted-foreground">Reach out and I'll respond within a business day.</p>
-            <a href={`mailto:${profile.email}`} className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-secondary)] hover:text-foreground">
-              <Mail className="h-4 w-4" /> {profile.email}
-            </a>
-          </div>
-        </motion.aside>
+        </div>
       </section>
     </>
   );

@@ -1,91 +1,96 @@
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/site-layout";
-import { education, profile, timeline } from "@/lib/portfolio-data";
+
+const storyParagraphs = [
+  "My professional journey has taught me that technical knowledge alone is not enough. I enjoy understanding difficult problems, asking the right questions, and staying involved until there is a clear path forward.",
+  "I'm naturally reserved outside work, but professional situations bring out a different side of me. I enjoy technical discussions, coordinating with people across different roles, sharing ideas, and helping teams move toward solutions.",
+  "I approach growth with intention. I continuously learn, experiment with AI and new technologies, build practical projects, and enjoy sharing knowledge with others whenever I can help.",
+];
+
+const driveItems = [
+  { title: "Curiosity", body: "I like understanding why something works, why it failed, and whether there is a better way to solve it." },
+  { title: "Ownership", body: "When I take responsibility for something, I prefer to investigate it thoroughly, involve the right people when needed, and follow it toward a clear outcome." },
+  { title: "Continuous Learning", body: "I actively explore AI and new technologies, experiment with ideas, build practical projects, and keep developing my technical and problem-solving abilities." },
+  { title: "Knowledge Sharing", body: "I enjoy explaining technical topics, helping others understand problems, and sharing what I learn through practical guidance and mentoring." },
+];
+
+const beyondWorkItems = [
+  { title: "AI & Building", body: "Exploring AI tools, learning new technologies, and turning ideas into practical digital projects." },
+  { title: "Cricket", body: "Enjoy playing and watching cricket in my free time." },
+  { title: "Travel", body: "Enjoy exploring new places and taking a break from routine." },
+  { title: "Movies & Friends", body: "Action, thriller, and comedy films, along with spending time with friends." },
+];
+
+const snapshotItems = [
+  { label: "Based in", value: "Hyderabad, India" },
+  { label: "Languages", value: "Telugu · Hindi · English" },
+  { label: "Current Focus", value: "Growing in enterprise technology, AI, problem solving, and building practical solutions." },
+];
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
         eyebrow="About"
-        title="Engineering reliable enterprise contact centers."
-        description={profile.summary}
+        title="The person behind the engineer."
+        description="I'm Vaibhav Pattewar, a technology professional based in Hyderabad who enjoys solving difficult problems, taking ownership when things go wrong, and finding better ways to work. I value curiosity, reliability, clear communication, continuous learning, and helping others grow."
       />
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1.1fr_1fr]">
-        <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
-          <p>
-            I'm {profile.name}, a Genesys Cloud CX Engineer based in {profile.location}. My work sits at the intersection of enterprise contact center operations, IVR development, SIP telephony, and infrastructure automation — the systems that quietly decide whether a customer gets an answer in seconds or waits on hold.
-          </p>
-          <p>
-            Day to day I run end-to-end Genesys Cloud CX operations for a 500-agent, dual-site deployment powering one of India's largest public sector banks. That means designing IVR call flows in Genesys Architect that survive millions of interactions, tuning outbound Preview and Progressive campaigns, and keeping SIP telephony, CRM screen pop, and data actions all working in lockstep under real production load.
-          </p>
-          <p>
-            The part I love most is turning painful, repetitive problems into small, well-engineered automation. A PowerShell service-restart utility I built lifted screen recording reliability from 65% to over 98% across the entire agent fleet. A real-time PowerShell + Webhooks monitor now catches critical EFRM campaign failures the moment they happen. An automated log collector cut RCA time down to one command.
-          </p>
-          <p>
-            Alongside client work I built and maintain <a href={profile.website} className="text-foreground underline decoration-[color:var(--brand)] underline-offset-4">NexCX.in</a>, an AI-powered technical knowledge platform. I also mentor — I designed and delivered an internal Genesys Cloud CX curriculum for 25 junior engineers.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <div className="glass rounded-2xl p-6">
-            <h3 className="font-display text-lg font-semibold">Strengths</h3>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              {[
-                "Enterprise-scale Genesys Cloud CX operations",
-                "IVR architecture in Genesys Architect",
-                "SIP telephony troubleshooting & DTMF diagnostics",
-                "PowerShell automation for Windows-heavy stacks",
-                "Production RCA under high-severity incidents",
-                "CRM integration, data actions, and screen pop reliability",
-                "Building internal training and enablement programs",
-              ].map((s) => (
-                <li key={s} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[image:var(--gradient-brand)]" />
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="glass rounded-2xl p-6">
-            <h3 className="font-display text-lg font-semibold">Education</h3>
-            <ul className="mt-3 space-y-3">
-              {education.map((e) => (
-                <li key={e.school} className="text-sm">
-                  <p className="font-medium">{e.degree}</p>
-                  <p className="text-muted-foreground">{e.school}</p>
-                  <p className="text-xs text-muted-foreground">{e.period} · {e.detail}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">My Story</h2>
+        <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
+          {storyParagraphs.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-24">
-        <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">Career journey</h2>
-        <div className="relative mt-10">
-          <div className="absolute left-3 top-0 h-full w-px bg-border md:left-1/2" />
-          <div className="space-y-8">
-            {timeline.map((t, i) => (
-              <motion.div
-                key={t.year}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className={`relative grid gap-4 md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:col-start-2" : ""}`}
-              >
-                <span className="absolute left-3 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-[image:var(--gradient-brand)] shadow-glow md:left-1/2" />
-                <div className={`pl-10 md:pl-0 ${i % 2 ? "md:pr-10 md:text-right" : "md:pl-10"}`}>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">{t.year}</p>
-                  <h3 className="mt-1 font-display text-lg font-semibold">{t.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{t.detail}</p>
-                </div>
-              </motion.div>
+      <section className="mx-auto max-w-6xl px-4 pb-12 md:pb-16">
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">What Drives Me</h2>
+        <div className="mt-6 glass rounded-2xl p-6">
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            {driveItems.map((it) => (
+              <li key={it.title} className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[image:var(--gradient-brand)]" />
+                <span>
+                  <span className="font-medium text-foreground">{it.title}:</span> {it.body}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 md:pb-16">
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">Beyond Work</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {beyondWorkItems.map((it, i) => (
+            <motion.div
+              key={it.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="glass rounded-2xl p-5"
+            >
+              <h3 className="font-display text-base font-semibold">{it.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{it.body}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4">
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">Personal Snapshot</h2>
+        <div className="mt-6 glass rounded-2xl p-6">
+          <ul className="space-y-2 text-sm">
+            {snapshotItems.map((s) => (
+              <li key={s.label}>
+                <span className="font-medium text-foreground">{s.label}:</span>{" "}
+                <span className="text-muted-foreground">{s.value}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

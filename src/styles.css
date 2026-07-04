@@ -140,6 +140,14 @@
     border-color: var(--color-border);
   }
 
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
